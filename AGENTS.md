@@ -22,7 +22,6 @@ A Swift package with no Xcode project and no Swift dependencies. jsfxr runs insi
 - `Scripts/`: `build-app.sh`, `build-release.sh`, `Blips.entitlements`, `render-icon.swift`, `render-banner.swift`, `screenshot.sh` with `screenshot.swift`, and `update-jsfxr.sh`.
 - `Tests/BlipsCoreTests`: Swift Testing tests for the core.
 - `docs/`: the README's banner and screenshots.
-- `.github/workflows/ci.yml`: `swift test` and `build-release.sh` on macOS.
 
 ## Build and test
 
