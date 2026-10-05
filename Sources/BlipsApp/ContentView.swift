@@ -23,10 +23,6 @@ struct ContentView: View {
           ) {
             GenerateButton()
           }
-        } else if model.sounds.isEmpty {
-          EmptyState(symbol: "magnifyingglass", title: "No sounds match", message: "Try other words, or look in All Sounds.") {
-            EmptyView()
-          }
         } else {
           SoundGrid()
         }
@@ -50,7 +46,6 @@ struct ContentView: View {
         }
       }
     }
-    .searchable(text: $model.search, placement: .sidebar, prompt: "Search sounds")
     .sheet(isPresented: $model.showsGenerateSheet) {
       GenerateSheet()
     }

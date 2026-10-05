@@ -20,9 +20,6 @@ final class AppModel {
   var sidebar: SidebarItem? = .all {
     didSet { refresh() }
   }
-  var search = "" {
-    didSet { refresh() }
-  }
   var selectedID: Sound.ID?
   private(set) var playingID: Sound.ID?
   private(set) var generation: Generation?
@@ -30,8 +27,8 @@ final class AppModel {
   var showsGenerateSheet = false
   var errorMessage: String?
 
-  /// The sounds shown, and the same sounds grouped by category, worked out when the library,
-  /// the sidebar or the search change, not on every redraw: a library holds thousands of sounds.
+  /// The sounds shown, and the same sounds grouped by category, worked out when the library or
+  /// the sidebar change, not on every redraw: a library holds thousands of sounds.
   private(set) var sounds: [Sound] = []
   private(set) var sections: [(category: SoundCategory, sounds: [Sound])] = []
   private(set) var counts: [String: Int] = [:]
@@ -82,7 +79,7 @@ final class AppModel {
       sections = []
       return
     }
-    sounds = library.sounds(category: category, matching: search)
+    sounds = library.sounds(category: category)
     let grouped = Dictionary(grouping: sounds, by: \.category)
     sections = library.categories.compactMap { category in
       grouped[category.id].map { (category, $0) }
@@ -107,7 +104,6 @@ final class AppModel {
   func show(_ id: Sound.ID) {
     guard let sound = index[id] else { return }
     if !sounds.contains(where: { $0.id == id }) {
-      search = ""
       sidebar = .category(sound.category)
     }
     select(sound)

@@ -51,6 +51,13 @@ extension Commands {
     ],
     changelog: [
       Manifest.Release(
+        version: "1.1.0",
+        date: "2026-10-05",
+        changes: [
+          "The app no longer has a search field. The command didn't change: blips list --search still finds sounds.",
+        ]
+      ),
+      Manifest.Release(
         version: "1.0.0",
         date: "2026-10-05",
         changes: [

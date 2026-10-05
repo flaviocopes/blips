@@ -6,7 +6,7 @@ I make a lot of small apps, and I wanted sounds for them that I could pick in a 
 
 ## Download
 
-Get `Blips-1.0.0.zip` from the [latest release](https://github.com/flaviocopes/blips/releases/latest), unzip it, and drag Blips to your Applications folder. It runs on macOS 14 Sonoma or later, on Apple silicon and Intel Macs.
+Get `Blips-1.1.0.zip` from the [latest release](https://github.com/flaviocopes/blips/releases/latest), unzip it, and drag Blips to your Applications folder. It runs on macOS 14 Sonoma or later, on Apple silicon and Intel Macs.
 
 The first time you open it, click **Generate the Library**. Blips makes every sound on your Mac, which takes less than half a minute, and they take about 300 MB.
 
@@ -35,7 +35,7 @@ The sidebar has 26 categories in four groups:
 - **Combos**, two sounds stacked or one after the other: sent (a swoosh into a pop), received, trash, confirm, reward, impact and zap.
 - **Jingles**, short tunes on a scale: fanfare, game over, countdown, startup and alarm.
 
-Click a sound to play it. The arrow keys move to the next one and play it, so you can go through a category quickly, and Space plays or stops. Search finds sounds by name, tag or ID, like `soft rising` or `success-003`.
+Click a sound to play it. The arrow keys move to the next one and play it, so you can go through a category quickly, and Space plays or stops.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png" />
