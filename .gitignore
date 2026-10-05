@@ -1,0 +1,6 @@
+.DS_Store
+.build/
+dist/
+.swiftpm/
+.cursor/
+/blips-showreel.mp4
