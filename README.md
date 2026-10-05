@@ -4,9 +4,9 @@ Blips is a Mac app and a command line tool with about 6,000 8-bit sound effects 
 
 I make a lot of small apps, and I wanted sounds for them that I could pick in a minute, or that an AI coding agent could pick for me. Blips makes them with [jsfxr](https://github.com/chr15m/jsfxr), the JavaScript port of DrPetter's [sfxr](https://www.drpetter.se/project_sfxr.html), and keeps only the sounds that are clearly different from each other, so you don't scroll through fifty copies of the same blip.
 
-Watch the 30-second demo:
+Read the announcement and watch the 30-second demo on my blog: [I built Blips, 6,000 8-bit sound effects for my apps](https://flaviocopes.com/blips/).
 
-[![Watch the 30-second Blips demo](docs/showreel-poster.jpg)](https://flaviocopes.com/images/blips/demo.mp4)
+[![Watch the 30-second Blips demo](docs/showreel-poster.jpg)](https://flaviocopes.com/blips/)
 
 ## Download
 
