@@ -15,7 +15,7 @@ enum CommandLineTool {
     let alert = NSAlert()
     do {
       guard FileManager.default.isExecutableFile(atPath: bundled.path) else {
-        throw CocoaError(.fileNoSuchFile, userInfo: [NSLocalizedDescriptionKey: "This copy of Blips has no blips command inside. Build it with Scripts/build-app.sh."])
+        throw CocoaError(.fileNoSuchFile, userInfo: [NSLocalizedDescriptionKey: "This copy of Chip Pops has no blips command inside. Build it with Scripts/build-app.sh."])
       }
       try FileManager.default.createDirectory(at: link.deletingLastPathComponent(), withIntermediateDirectories: true)
       if (try? FileManager.default.destinationOfSymbolicLink(atPath: link.path)) != nil || FileManager.default.fileExists(atPath: link.path) {

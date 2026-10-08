@@ -1,5 +1,5 @@
 #!/usr/bin/env swift
-// Renders the Blips icon: an 8-bit waveform made of pixel blocks, mirrored around the middle like a
+// Renders the Chip Pops icon: an 8-bit waveform made of pixel blocks, mirrored around the middle like a
 // real waveform, with an amber sparkle for the blip, baked into a squircle on Apple's macOS icon grid.
 // Writes Assets/AppIcon.png, which Scripts/build-app.sh turns into AppIcon.icns.
 // Usage: swift Scripts/render-icon.swift

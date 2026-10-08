@@ -50,6 +50,7 @@ extension Commands {
       ),
     ],
     changelog: [
+      Manifest.Release(version: "1.2.0", date: "2026-10-08", changes: ["Renamed the app to Chip Pops. Existing commands and saved data still work."]),
       Manifest.Release(
         version: "1.1.0",
         date: "2026-10-05",

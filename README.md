@@ -1,28 +1,28 @@
-<img src="docs/banner.png" alt="Blips, 8-bit sound effects for your apps, made with jsfxr" />
+<img src="docs/banner.png" alt="Chip Pops, 8-bit sound effects for your apps, made with jsfxr" />
 
-Blips is a Mac app and a command line tool with about 6,000 8-bit sound effects for your apps and games: clicks, toggles, success chimes, errors, notifications and swooshes, game sounds like coins and lasers, combos like a message sent, and short jingles like a victory fanfare or a countdown. Click a sound to hear it, then drag its WAV file into your project.
+Chip Pops is a Mac app and a command line tool with about 6,000 8-bit sound effects for your apps and games: clicks, toggles, success chimes, errors, notifications and swooshes, game sounds like coins and lasers, combos like a message sent, and short jingles like a victory fanfare or a countdown. Click a sound to hear it, then drag its WAV file into your project.
 
-I make a lot of small apps, and I wanted sounds for them that I could pick in a minute, or that an AI coding agent could pick for me. Blips makes them with [jsfxr](https://github.com/chr15m/jsfxr), the JavaScript port of DrPetter's [sfxr](https://www.drpetter.se/project_sfxr.html), and keeps only the sounds that are clearly different from each other, so you don't scroll through fifty copies of the same blip.
+I make a lot of small apps, and I wanted sounds for them that I could pick in a minute, or that an AI coding agent could pick for me. Chip Pops makes them with [jsfxr](https://github.com/chr15m/jsfxr), the JavaScript port of DrPetter's [sfxr](https://www.drpetter.se/project_sfxr.html), and keeps only the sounds that are clearly different from each other, so you don't scroll through fifty copies of the same blip.
 
-Read the announcement and watch the 30-second demo on my blog: [I built Blips, 6,000 8-bit sound effects for my apps](https://flaviocopes.com/blips/).
+Read the announcement and watch the 30-second demo on my blog: [I built Chip Pops, 6,000 8-bit sound effects for my apps](https://flaviocopes.com/chip-pops/).
 
-[![Watch the 30-second Blips demo](docs/showreel-poster.jpg)](https://flaviocopes.com/blips/)
+[![Watch the 30-second Chip Pops demo](docs/showreel-poster.jpg)](https://flaviocopes.com/chip-pops/)
 
 ## Download
 
-Get `Blips-1.1.0.zip` from the [latest release](https://github.com/flaviocopes/blips/releases/latest), unzip it, and drag Blips to your Applications folder. It runs on macOS 14 Sonoma or later, on Apple silicon and Intel Macs.
+Get `Chip-Pops-1.2.0.zip` from the [latest release](https://github.com/flaviocopes/chip-pops/releases/latest), unzip it, and drag Chip Pops to your Applications folder. It runs on macOS 14 Sonoma or later, on Apple silicon and Intel Macs.
 
-The first time you open it, click **Generate the Library**. Blips makes every sound on your Mac, which takes less than half a minute, and they take about 300 MB.
+The first time you open it, click **Generate the Library**. Chip Pops makes every sound on your Mac, which takes less than half a minute, and they take about 300 MB.
 
 ### Opening it the first time
 
-Blips is signed with my Apple Developer ID and notarized by Apple. The first time you open it, macOS asks if you're sure you want to open an app downloaded from the internet. Click **Open**.
+Chip Pops is signed with my Apple Developer ID and notarized by Apple. The first time you open it, macOS asks if you're sure you want to open an app downloaded from the internet. Click **Open**.
 
-On a work laptop you might not be able to install apps in `/Applications`. You can keep Blips in the `Applications` folder inside your home folder instead.
+On a work laptop you might not be able to install apps in `/Applications`. You can keep Chip Pops in the `Applications` folder inside your home folder instead.
 
 ### Updates
 
-Once a day, Blips asks GitHub whether there's a newer version. When there is, it shows what's new, and **Install and Relaunch** puts it in place of the old one. **Blips → Check for Updates…** checks right away.
+Once a day, Chip Pops asks GitHub whether there's a newer version. When there is, it shows what's new, and **Install and Relaunch** puts it in place of the old one. **Chip Pops → Check for Updates…** checks right away.
 
 To turn off the daily check, run this in Terminal:
 
@@ -43,7 +43,7 @@ Click a sound to play it. The arrow keys move to the next one and play it, so yo
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="docs/screenshot-dark.png" />
-  <img src="docs/screenshot-light.png" alt="The Blips window with the categories in the sidebar, the success sounds as a grid of waveforms, and the selected sound in the inspector with its pitch over time" />
+  <img src="docs/screenshot-light.png" alt="The Chip Pops window with the categories in the sidebar, the success sounds as a grid of waveforms, and the selected sound in the inspector with its pitch over time" />
 </picture>
 
 The inspector on the right shows the selected sound: its waveform, its pitch over time, tags like `soft`, `retro` or `rising`, and the jsfxr parameters it was made from, drawn like the sliders in jsfxr's editor. For a combo it shows the two sounds it's made of, and you can click each one to hear it alone. For a jingle it shows the notes.
@@ -59,7 +59,7 @@ The sounds are yours to use in anything you make, free or commercial, with no cr
 
 ## Every sound is different
 
-jsfxr makes random sounds, and random sounds repeat themselves. Blips rolls each category's sounds one after the other and keeps a roll only when it's clearly different from every sound already in the category. It compares a fingerprint of each sound: its pitch over time, its loudness over time, how tonal or noisy it is, and its length. The bar is about a different note and jump for two chimes, or a different wave. The same chime a whole tone higher doesn't count.
+jsfxr makes random sounds, and random sounds repeat themselves. Chip Pops rolls each category's sounds one after the other and keeps a roll only when it's clearly different from every sound already in the category. It compares a fingerprint of each sound: its pitch over time, its loudness over time, how tonal or noisy it is, and its length. The bar is about a different note and jump for two chimes, or a different wave. The same chime a whole tone higher doesn't count.
 
 A category ends after 400 sounds, or when it runs out of new ones, so categories have different sizes: 77 coins, 111 success chimes, 400 explosions.
 
@@ -71,7 +71,7 @@ Want a whole different set? **Library → Generate…** has **New Sounds**, whic
 
 ## Pick sounds with AI agents
 
-Blips has a command line tool, `blips`, so an agent like Claude Code, Cursor or Codex can find sounds for the app you're building and copy them in. Set it up from the **Blips** menu:
+Chip Pops has a command line tool, `blips`, so an agent like Claude Code, Cursor or Codex can find sounds for the app you're building and copy them in. Set it up from the **Chip Pops** menu:
 
 1. **Install Command Line Tool…** links `blips` into `~/.local/bin`.
 2. **Install Agent Skill…** copies a skill to `~/.agents/skills/blips` and links it for Claude Code, Cursor and Codex, so they know when and how to use the command.
@@ -89,11 +89,11 @@ The agent can't hear the sounds, so it picks a few and asks you to listen with `
 
 ## Privacy
 
-Blips keeps the sounds on your Mac, in `~/Library/Application Support/Blips`. Once a day, it asks GitHub whether there's a newer version of Blips, and it downloads one only when you click **Install and Relaunch**. It opens sfxr.me in your browser only when you ask it to. There are no accounts.
+Chip Pops keeps the sounds on your Mac, in `~/Library/Application Support/Blips`. Once a day, it asks GitHub whether there's a newer version of Chip Pops, and it downloads one only when you click **Install and Relaunch**. It opens sfxr.me in your browser only when you ask it to. There are no accounts.
 
 ## How it works
 
-jsfxr is JavaScript, so Blips runs it inside JavaScriptCore, the JavaScript engine built into macOS, and nothing needs Node. Before every call it replaces `Math.random` with a seeded generator, so a seed always rolls the same sound and renders the same noise. Each sound is mastered to the same loudness, and saved as a 16-bit WAV file next to a `library.json` that keeps its jsfxr parameters, which paste unchanged into sfxr.me.
+jsfxr is JavaScript, so Chip Pops runs it inside JavaScriptCore, the JavaScript engine built into macOS, and nothing needs Node. Before every call it replaces `Math.random` with a seeded generator, so a seed always rolls the same sound and renders the same noise. Each sound is mastered to the same loudness, and saved as a 16-bit WAV file next to a `library.json` that keeps its jsfxr parameters, which paste unchanged into sfxr.me.
 
 The hard part was making every Mac agree. The generator decides whether to keep a sound by comparing a distance with a threshold, and the system's math functions round differently in the last digit on Intel and Apple silicon. That's enough to flip one decision and change the rest of a category, so everything the generator computes uses plain arithmetic, with its own `sin`, `cos`, `log2` and `exp2`.
 
@@ -111,20 +111,17 @@ To build the release zip, run:
 ./Scripts/build-release.sh
 ```
 
-It builds a universal app in `dist/Blips.app`, with the `blips` command inside, and zips it into `dist/`. With my Developer ID certificate in the keychain it signs and notarizes the app. Everywhere else it signs it ad hoc, so your copy is signed ad hoc. A copy you build yourself opens without a warning on your Mac.
+It builds a universal app in `dist/Chip Pops.app`, with the `blips` command inside, and zips it into `dist/`. With my Developer ID certificate in the keychain it signs and notarizes the app. Everywhere else it signs it ad hoc, so your copy is signed ad hoc. A copy you build yourself opens without a warning on your Mac.
 
-If you send it to another Mac, macOS says it "could not verify Blips is free of malware". Click **Done**, then go to **System Settings → Privacy & Security** and click **Open Anyway**, or remove the quarantine flag in Terminal:
+If you send it to another Mac, macOS says it "could not verify Chip Pops is free of malware". Click **Done**, then go to **System Settings → Privacy & Security** and click **Open Anyway**.
 
-```sh
-xattr -dr com.apple.quarantine /Applications/Blips.app
-```
 
 ## Development
 
 ```sh
 swift test                                  # the core tests
 swift run blips help                        # the command line tool
-./Scripts/build-app.sh                      # dist/Blips.app, without the zip
+./Scripts/build-app.sh                      # dist/Chip Pops.app, without the zip
 swift Scripts/render-icon.swift             # the app icon
 ./Scripts/screenshot.sh "$HOME/Library/Application Support/Blips"   # docs/screenshot-light.png and -dark.png
 swift Scripts/render-banner.swift           # docs/banner.png, from docs/screenshot-dark.png
@@ -135,4 +132,4 @@ Working with an AI coding agent? Point it at [AGENTS.md](AGENTS.md). It has the 
 
 ## License
 
-[MIT](LICENSE). jsfxr and riffwave.js, which Blips includes in `Sources/BlipsCore/JSFXRSource.swift`, are in the public domain.
+[MIT](LICENSE). jsfxr and riffwave.js, which Chip Pops includes in `Sources/BlipsCore/JSFXRSource.swift`, are in the public domain.

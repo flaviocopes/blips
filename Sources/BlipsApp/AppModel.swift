@@ -39,7 +39,7 @@ final class AppModel {
   @ObservationIgnored private var peakCache: [Sound.ID: [Float]] = [:]
   @ObservationIgnored private var spectrogramCache: [Sound.ID: [[Float]]] = [:]
 
-  /// `open Blips.app --args -select sent-001` opens the app on that sound.
+  /// `open "Chip Pops.app" --args -select sent-001` opens the app on that sound.
   init() {
     load()
     if let id = UserDefaults.standard.string(forKey: "select"), let sound = index[id] {
@@ -57,7 +57,7 @@ final class AppModel {
       loadedVersion = modified
       use(fresh)
     } catch {
-      errorMessage = "Blips couldn't read its library in \(store.folder.path): \(error.localizedDescription)"
+      errorMessage = "Chip Pops couldn't read its library in \(store.folder.path): \(error.localizedDescription)"
     }
   }
 
@@ -168,7 +168,7 @@ final class AppModel {
         self.player = nil
       }
     } catch {
-      errorMessage = "Blips couldn't play \(sound.id): \(error.localizedDescription)"
+      errorMessage = "Chip Pops couldn't play \(sound.id): \(error.localizedDescription)"
     }
   }
 
@@ -259,7 +259,7 @@ final class AppModel {
       }
       NSWorkspace.shared.activateFileViewerSelecting(files.map(\.1))
     } catch {
-      errorMessage = "Blips couldn't export: \(error.localizedDescription)"
+      errorMessage = "Chip Pops couldn't export: \(error.localizedDescription)"
     }
   }
 
@@ -294,6 +294,6 @@ final class AppModel {
 
   private func failGenerating(_ error: Error) {
     generation = nil
-    errorMessage = "Blips couldn't generate the library: \(error.localizedDescription)"
+    errorMessage = "Chip Pops couldn't generate the library: \(error.localizedDescription)"
   }
 }

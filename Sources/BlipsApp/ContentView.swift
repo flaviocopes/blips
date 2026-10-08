@@ -17,7 +17,7 @@ struct ContentView: View {
             symbol: "waveform",
             title: "No sounds yet",
             message: """
-              Blips makes its sounds with jsfxr, in \(LibraryGenerator.categories.count) categories, combos and \
+              Chip Pops makes its sounds with jsfxr, in \(LibraryGenerator.categories.count) categories, combos and \
               jingles included, and keeps only the ones that are clearly different from the others.
               """
           ) {
@@ -50,7 +50,7 @@ struct ContentView: View {
       GenerateSheet()
     }
     .alert(
-      "Blips",
+      "Chip Pops",
       isPresented: Binding(get: { model.errorMessage != nil }, set: { if !$0 { model.errorMessage = nil } })
     ) {
       Button("OK") {}
@@ -206,7 +206,7 @@ struct GenerateSheet: View {
       Text("Generate the library")
         .font(Typography.title)
       Text("""
-        Blips rolls each category's sounds with jsfxr and keeps a roll only when it's clearly different \
+        Chip Pops rolls each category's sounds with jsfxr and keeps a roll only when it's clearly different \
         from every sound already in the category. The seed decides every roll, so the same seed always \
         gives the same sounds, and another seed a whole different library.
         """)

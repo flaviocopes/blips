@@ -7,7 +7,7 @@
 import AppKit
 import SwiftUI
 
-let name = "Blips"
+let name = "Chip Pops"
 let tagline = "8-bit sound effects for your apps,\nmade with jsfxr."
 let chips = ["6,000 sounds", "26 categories", "A CLI for agents"]
 let size = CGSize(width: 1280, height: 560)

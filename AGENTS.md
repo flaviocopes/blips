@@ -1,4 +1,4 @@
-# Blips
+# Chip Pops
 
 A Mac app and a `blips` command with a library of about 6,000 8-bit sound effects made with [jsfxr](https://github.com/chr15m/jsfxr), each clearly different from the others in its category, in 26 categories in four groups: app interfaces (click, blip, pop, toggle, success, error, notification, swoosh), games (coin, power up, jump, laser, explosion, hit), combos of two library sounds (sent, received, trash, confirm, reward, impact, zap) and jingles, short tunes on a scale (fanfare, game over, countdown, startup, alarm). Other apps take their sounds from it: an agent finds candidates with `blips list`, a person listens to them in the app or with `blips play`, and `blips export` copies the one they pick into the app.
 
@@ -32,19 +32,19 @@ swift build                      # build everything (debug)
 swift test                       # the core tests, must pass before committing
 swift run BlipsApp               # run the app from source
 swift run blips help             # the command line tool
-./Scripts/build-app.sh           # universal release build, dist/Blips.app, with blips in Contents/Helpers
-./Scripts/build-release.sh       # dist/Blips-<version>.zip, notarized when the Developer ID is in the keychain
+./Scripts/build-app.sh           # universal release build, dist/Chip Pops.app, with blips in Contents/Helpers
+./Scripts/build-release.sh       # dist/Chip-Pops-<version>.zip, notarized when the Developer ID is in the keychain
 swift Scripts/render-icon.swift  # Assets/AppIcon.png
 ./Scripts/screenshot.sh <library folder>   # docs/screenshot-light.png and -dark.png, success-002 selected
 swift Scripts/render-banner.swift          # docs/banner.png, from docs/screenshot-dark.png
 ./Scripts/update-jsfxr.sh 1.4.1  # vendor another jsfxr version from npm
 ```
 
-Set `BLIPS_HOME=/tmp/blips-test` to use another library folder. Blips → Install Command Line Tool links `~/.local/bin/blips` to the command inside the app.
+Set `BLIPS_HOME=/tmp/blips-test` to use another library folder. Chip Pops → Install Command Line Tool links `~/.local/bin/blips` to the command inside the app.
 
 ## Sound IDs never change
 
-Apps keep the files they exported, but their AGENTS.md files note which Blips ID each sound came from, so `click-003` has to render the same sound forever, on every Mac. Sound N of a category depends on the sounds before it, since it had to be different from them, so a single number computed differently anywhere changes the rest of the category. The tests check that a category comes out the same twice, that a bigger limit keeps its first sounds, and that every kind of sound renders again bit for bit from its JSON. The whole library comes out byte-identical on Intel and Apple silicon, and with or without the JIT.
+Apps keep the files they exported, but their AGENTS.md files note which Chip Pops ID each sound came from, so `click-003` has to render the same sound forever, on every Mac. Sound N of a category depends on the sounds before it, since it had to be different from them, so a single number computed differently anywhere changes the rest of the category. The tests check that a category comes out the same twice, that a bigger limit keeps its first sounds, and that every kind of sound renders again bit for bit from its JSON. The whole library comes out byte-identical on Intel and Apple silicon, and with or without the JIT.
 
 - Everything computed before jsfxr renders, and every fingerprint, uses basic arithmetic, `squareRoot()` and `ExactMath`, never `pow`, `log2`, `sin`, `cos` or Accelerate. The system's versions round differently in the last digit on Intel, and that's enough to flip a fingerprint distance across the threshold: when toggle picked its pitches with `pow`, the Intel library was different. Swift doesn't fuse multiplications and additions on its own, so plain arithmetic is safe. To check, build `Sources/BlipsCore/*.swift` with a small `main.swift` for `-target arm64-apple-macos14` and `-target x86_64-apple-macos14`, run both, and compare.
 - Add new categories at the end of `Recipe.all`, never in the middle.
@@ -61,7 +61,7 @@ Apps keep the files they exported, but their AGENTS.md files note which Blips ID
 - A roll that comes out silent, shorter than 20 ms or longer than its category allows is rolled again with the next attempt's seed.
 - `finish` masters jsfxr's output: it removes the DC offset that square waves with an uneven duty leave, brings every sound to the same loudness (an RMS of 0.18 over its loudest 50 ms) unless that pushes a sample past 0.9, then fades the first 1 ms and the last 5 ms.
 - The app reloads the library when it becomes active, so a `blips generate` in the terminal shows up right away. It plays sounds with `AVAudioPlayer`, the command with `afplay`, and `export --format` converts with `afconvert`.
-- `build-app.sh` signs both binaries with `Scripts/Blips.entitlements`, which allows JIT. Without it, JavaScriptCore runs jsfxr in its interpreter, 8 times slower, and that includes the debug builds from `swift build`, so time generation with `dist/Blips.app/Contents/Helpers/blips`.
+- `build-app.sh` signs both binaries with `Scripts/Blips.entitlements`, which allows JIT. Without it, JavaScriptCore runs jsfxr in its interpreter, 8 times slower, and that includes the debug builds from `swift build`, so time generation with `dist/Chip Pops.app/Contents/Helpers/blips`.
 
 ## Working on the code
 
@@ -70,11 +70,15 @@ Apps keep the files they exported, but their AGENTS.md files note which Blips ID
 - Every version bump adds a changelog entry to `Commands.manifest`, newest first. The version is `Blips.version` in `Sources/BlipsCore/Version.swift`.
 - Use the colors and fonts in `Theme.swift`. Each category's color and symbol live in `CategoryStyle`, so a new category needs an entry there.
 - The icon is drawn by `Scripts/render-icon.swift`. Change a constant and run it again instead of editing the PNG.
-- The app has no UI tests. Check visual changes with `./Scripts/screenshot.sh`, which renders the real views from a library you point it at, and by opening `dist/Blips.app`. `open dist/Blips.app --args -select sent-001` opens the app on a sound, so the inspector can be checked without clicking.
+- The app has no UI tests. Check visual changes with `./Scripts/screenshot.sh`, which renders the real views from a library you point it at, and by opening `dist/Chip Pops.app`. `open dist/Chip Pops.app --args -select sent-001` opens the app on a sound, so the inspector can be checked without clicking.
 
 ## Releases
 
-- Releases are on GitHub, tagged `vX.Y.Z`, with `Blips-X.Y.Z.zip` from `build-release.sh` attached. Use a minor version for a new feature or a change people notice, and a point version for bug fixes. Changing sounds that already exist is a change people notice.
-- The in-app updater installs a release only when the tag equals the app's version, the zip has `Blips.app` at the top with the same bundle ID (`com.flaviocopes.blips`), and its signature is valid. It takes the first `.zip` in the release, so attach only that one zip.
+- Releases are on GitHub, tagged `vX.Y.Z`, with `Chip-Pops-X.Y.Z.zip` from `build-release.sh` attached. Use a minor version for a new feature or a change people notice, and a point version for bug fixes. Changing sounds that already exist is a change people notice.
+- The in-app updater installs a release only when the tag equals the app's version, the zip has `Chip Pops.app` at the top with the same bundle ID (`com.flaviocopes.blips`), and its signature is valid. It takes the first `.zip` in the release, so attach only that one zip.
 - The release notes start with what's new. The update dialog shows them up to the `## Install` heading.
 - `build-release.sh` signs with the Developer ID and notarizes when the certificate and the `notary` notarytool profile are on the Mac. Everywhere else, like CI and forks, it signs ad hoc.
+
+## Naming compatibility
+
+The public app name is Chip Pops. Keep its existing bundle ID, saved data paths, URL schemes, CLI commands and internal Swift targets so installed copies and agent integrations remain compatible. Use the renamed checkout folder and GitHub repository in new links and build instructions.

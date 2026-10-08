@@ -6,14 +6,14 @@ struct BlipsApp: App {
   @State private var model = AppModel()
 
   init() {
-    AppUpdater.shared.start(repository: "flaviocopes/blips")
+    AppUpdater.shared.start(repository: "flaviocopes/chip-pops")
     if AgentSkill.state == .outdated {
       _ = AgentSkill.install()
     }
   }
 
   var body: some Scene {
-    Window("Blips", id: "main") {
+    Window("Chip Pops", id: "main") {
       ContentView()
         .environment(model)
         .frame(minWidth: 900, minHeight: 560)

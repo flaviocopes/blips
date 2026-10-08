@@ -1,6 +1,6 @@
 import Foundation
 
-/// Mono 16-bit PCM WAV files, the format every Blips sound is saved in.
+/// Mono 16-bit PCM WAV files, the format every Chip Pops sound is saved in.
 public enum WaveFile {
   public static let sampleRate = 44100
 

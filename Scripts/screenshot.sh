@@ -1,7 +1,7 @@
 #!/bin/sh
 # Renders the main window from the real app views, with a library and one sound selected.
 # It compiles BlipsCore into a static library, then the app's views with Scripts/screenshot.swift
-# in place of the @main file, into an app with its own bundle ID, so it never touches Blips' settings.
+# in place of the @main file, into an app with its own bundle ID, so it never touches Chip Pops' settings.
 # Usage: ./Scripts/screenshot.sh <library folder> [output folder, default: docs] [sound ID, default: success-002]
 # Set BUILD_ONLY=1 to build the capture app without running it, to run it on another Mac.
 set -eu
@@ -12,7 +12,7 @@ LIBRARY="$1"
 OUTPUT="${2:-docs}"
 SOUND="${3:-success-002}"
 BUILD="$ROOT/.build/screenshot"
-APP="$BUILD/Blips Screenshot.app"
+APP="$BUILD/Chip Pops Screenshot.app"
 
 rm -rf "$BUILD"
 mkdir -p "$APP/Contents/MacOS"
@@ -37,7 +37,7 @@ cat > "$APP/Contents/Info.plist" <<PLIST
   <key>CFBundleIdentifier</key>
   <string>com.flaviocopes.blips.screenshot</string>
   <key>CFBundleName</key>
-  <string>Blips</string>
+  <string>Chip Pops</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>NSHighResolutionCapable</key>
@@ -57,5 +57,5 @@ OUTPUT=$(CDPATH= cd -- "$OUTPUT" && pwd)
 LIBRARY=$(CDPATH= cd -- "$LIBRARY" && pwd)
 open -n "$APP" --args "$OUTPUT" "$LIBRARY" "$SOUND" -AppleLocale en_US -AppleLanguages '(en)'
 sleep 1
-while pgrep -f "Blips Screenshot.app/Contents/MacOS" >/dev/null; do sleep 1; done
+while pgrep -f "Chip Pops Screenshot.app/Contents/MacOS" >/dev/null; do sleep 1; done
 ls "$OUTPUT"

@@ -29,7 +29,7 @@ enum Screenshot {
       backing: .buffered,
       defer: false
     )
-    window.title = "Blips"
+    window.title = "Chip Pops"
     window.contentView = host
     window.center()
     _ = NotificationCenter.default.addObserver(forName: NSApplication.didFinishLaunchingNotification, object: nil, queue: .main) { _ in

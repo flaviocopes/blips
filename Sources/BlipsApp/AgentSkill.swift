@@ -24,7 +24,7 @@ enum AgentSkill {
   /// Copies the skill in and links it for each agent that's installed. Returns what went wrong, if anything.
   static func install() -> String? {
     let fm = FileManager.default
-    guard let bundled else { return "The skill is missing from this copy of Blips. Build it with Scripts/build-app.sh." }
+    guard let bundled else { return "The skill is missing from this copy of Chip Pops. Build it with Scripts/build-app.sh." }
     do {
       try fm.createDirectory(at: folder, withIntermediateDirectories: true)
       try replace(folder.appending(path: "SKILL.md"), with: bundled)
